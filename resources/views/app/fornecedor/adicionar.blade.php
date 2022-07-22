@@ -14,12 +14,23 @@
         </div>
 
         <div class="informacao-pagina">
+            {{ $msg }}
             <div class="informacao-pagina-conteudo">
-                <form method="post" action="">
-                    <input text="text" name="nome" class="borda-preta" placeholder="Nome">
-                    <input text="text" name="site" class="borda-preta" placeholder="Site">
-                    <input text="text" name="uf" class="borda-preta" placeholder="UF">
-                    <input text="email" name="email" class="borda-preta" placeholder="Email">
+                <form method="post" action="{{ route('app.fornecedor.adicionar') }}">
+                    @csrf
+                    <input text="text" name="nome" class="borda-preta" value="{{ old('nome') }}" placeholder="Nome">
+                    {{ $errors->has('nome') ? $errors->first('nome') : '' }}
+
+                    <input text="text" name="site" class="borda-preta" value="{{ old('site') }}" placeholder="Site">
+                    {{ $errors->has('site') ? $errors->first('site') : '' }}
+
+                    <input text="text" name="uf" class="borda-preta" value="{{ old('uf') }}" placeholder="UF">
+                    {{ $errors->has('uf') ? $errors->first('uf') : '' }}
+
+                    <input text="email" name="email" class="borda-preta"
+                        value="{{ old('email') }}"placeholder="Email">
+                    {{ $errors->has('email') ? $errors->first('email') : '' }}
+
                     <button type="submit" class="borda-preta">Cadastror</button>
                 </form>
             </div>
