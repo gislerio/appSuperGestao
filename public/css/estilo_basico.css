@@ -237,3 +237,13 @@ span {
     margin-left: auto;
     margin-right: auto
 }
+
+.pagination li {
+    display: inline;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.pagination ul {
+    list-style-type: none;
+}
