@@ -16,7 +16,7 @@
         <div class="informacao-pagina">
 
             <div class="informacao-pagina-conteudo">
-                <form method="post" action="">
+                <form method="post" action="{{ route('produto.store')}}">
                     @csrf
                     <input type="hidden" name="id" value="">
                     <input text="text" name="nome" class="borda-preta" value="" placeholder="Nome">
