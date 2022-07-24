@@ -15,7 +15,7 @@
 {{ $errors->has('descricao') ? $errors->first('descricao') : '' }}
 
 <input text="text" name="peso" class="borda-preta" value="{{ $produto->peso ?? old('peso') }}" placeholder="Peso">
-{{ $errors->has('text') ? $errors->first('text') : '' }}
+{{ $errors->has('peso') ? $errors->first('peso') : '' }}
 
 <select name="unidade_id">
     <option>Selecione a Unidade de Medida</option>
