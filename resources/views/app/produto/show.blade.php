@@ -20,6 +20,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
+                            <th>Nome</th>
                             <th>Descrição</th>
                             <th>Peso</th>
                             <th>Unidade de Medida</th>
@@ -28,6 +29,7 @@
                     <tbody>
                         <tr>
                             <td>{{ $produto->id }}</td>
+                            <td>{{ $produto->nome }}</td>
                             <td>{{ $produto->descricao }}</td>
                             <td>{{ $produto->peso }}</td>
                             <td>{{ $produto->unidade_id }}</td>
