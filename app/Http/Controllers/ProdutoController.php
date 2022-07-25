@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Item;
 use App\Produto;
 use App\ProdutoDetalhe;
 use App\Unidade;
@@ -16,7 +17,7 @@ class ProdutoController extends Controller
      */
     public function index(Request $request)
     {
-        $produtos = Produto::paginate(4);      
+        $produtos = Item::paginate(4);      
 
         return view('app.produto.index', ['produtos' => $produtos, 'request' => $request->all()]);
     }
