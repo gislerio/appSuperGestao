@@ -56,7 +56,7 @@ class ProdutoDetalheController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  App\ProdutoDetalhe $produtoDetalhe
+     * @param  Integer $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
