@@ -6,6 +6,16 @@
         <form method="post" action="{{ route('produto.store') }}">
             @csrf
 @endif
+<select name="fornecedor_id">
+    <option>Selecione um fornecedor</option>
+    @foreach ($fornecedores as $fornecedor)
+        <option value="{{ $fornecedor->id }}"
+            {{ ($produto->fornecedor_id ?? old('fornecedor_id')) == $fornecedor->id ? 'selected' : '' }}>
+            {{ $fornecedor->nome }}</option>
+    @endforeach
+</select>
+{{ $errors->has('fornecedor_id') ? $errors->first('fornecedor_id') : '' }}
+
 <input type="hidden" name="id" value="">
 <input text="text" name="nome" class="borda-preta" value="{{ $produto->nome ?? old('nome') }}" placeholder="Nome">
 {{ $errors->has('nome') ? $errors->first('nome') : '' }}
@@ -28,5 +38,5 @@
 {{ $errors->has('unidade_id') ? $errors->first('unidade_id') : '' }}
 
 
-<button type="submit" class="borda-preta">Cadastror</button>
+<button type="submit" class="borda-preta">Cadastrar</button>
 </form>
