@@ -51,8 +51,19 @@
                                         action="{{ route('produto.destroy', ['produto' => $produto->id]) }}">
                                         @method('DELETE')
                                         @csrf
-                                        <a href="#" onclick="document.getElementById('form_{{$produto->id}}').submit();">Excluir</a>
+                                        <a href="#"
+                                            onclick="document.getElementById('form_{{ $produto->id }}').submit();">Excluir</a>
                                     </form>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="12">
+                                    <p>Pedidos</p>
+                                    @foreach ($produto->pedido as $pedido)
+                                        <a href="{{ route('pedido-produto.create', ['pedido' => $pedido->id]) }}">
+                                            Pedido: {{ $pedido->id }},
+                                        </a>
+                                    @endforeach
                                 </td>
                             </tr>
                         @endforeach
